@@ -2,11 +2,12 @@ import streamlit as st
 import pandas as pd
 
 st.title("My Streamlit App")
-st.write("Hello, world!")
+st.write("Hello, Maya!")
 
-st.button("click me")
 
 if st.button("Load Data"):
-    # Load data from a CSV file
-    df = pd.read_csv("data.csv")
-    st.write(df)
+    file = st.file_uploader("Upload a CSV file", type=["csv"])
+    if file is not None:
+        df = pd.read_csv(file)
+        st.write("Data loaded successfully!")
+        st.dataframe(df)
