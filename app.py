@@ -11,3 +11,6 @@ if st.button("Load Data"):
         df = pd.read_csv(file)
         st.write("Data loaded successfully!")
         st.dataframe(df)
+
+reddit_username = 'maya'
+st.write(f"Reddit username: {reddit_username}")
